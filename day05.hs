@@ -31,6 +31,7 @@ part2 :: [(Int, Int)] -> Int
 part2 ranges = go a b sorted
   where
     ~((a, b) : sorted) = sortBy (\(a, _) (a', _) -> compare a a') ranges
+    
     go :: Int -> Int -> [(Int, Int)] -> Int
     go a b [] = b - a + 1
     go a b ((c, d) : rs)
